@@ -49,6 +49,8 @@ jobs:
             image: centos/7
           - label: CentOS 7 (amd64)
             image: centos/7/amd64
+          - label: CentOS 7 (figerprint)
+            image: images:f4c23689f2c89ca2c6d6088e7fb8c02b34fb3b39700d757e3844041562c3df25
           - label: AmazonLinux 2
             image: images:amazonlinux/2
           - label: AmazonLinux 2023
