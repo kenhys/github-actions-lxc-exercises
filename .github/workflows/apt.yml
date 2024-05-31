@@ -35,11 +35,20 @@ jobs:
       matrix:
         label:
           - Ubuntu 24.04
+          - CentOS 7
+          - AmazonLinux 2
+          - AmazonLinux 2023
         include:
           - label: Ubuntu 24.04
-            script: ./ubuntu2404.sh
+            image: ubunut:n
+          - label: CentOS 7
+            image: images:centos/7
+          - label: AmazonLinux 2
+            image: images:amazonlinux/2
+          - label: AmazonLinux 2023
+            image: images:amazonlinux/2023
     steps:
       - uses: actions/checkout@master
       - uses: canonical/setup-lxd@v0.1.1
       - name: ${{ matrix.label }}
-        run: ${{ matrix.script }}
+        run: ./launch.sh ${{ matrix.image }}
