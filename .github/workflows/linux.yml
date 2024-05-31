@@ -28,7 +28,7 @@ jobs:
       - name: ${{ matrix.label }}
         run: ${{ matrix.script }}
   launchv1:
-    name: Launch CGroupV1)
+    name: Launch CGroupV1
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
@@ -59,7 +59,7 @@ jobs:
       - name: ${{ matrix.label }}
         run: ./launch.sh ${{ matrix.image }}
   launchv2:
-    name: Launch CGroupV2)
+    name: Launch CGroupV2
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
