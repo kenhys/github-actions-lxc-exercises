@@ -6,7 +6,7 @@ echo "::group::Run test: launch ubuntu 24.04"
 lxc launch ubuntu:n target
 sleep 5
 echo "::endgroup::"
-echo "::group::Run test: configure $image"
+echo "::group::Run test: configure image"
 lxc config device add target host disk source=$PWD path=/host
 lxc list
 echo "::endgroup::"
