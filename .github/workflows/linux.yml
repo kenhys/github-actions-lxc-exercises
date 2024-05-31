@@ -27,6 +27,28 @@ jobs:
       - uses: canonical/setup-lxd@v0.1.1
       - name: ${{ matrix.label }}
         run: ${{ matrix.script }}
+  testv1:
+    name: Test CGroupV1
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        label:
+          - Available lxc alias
+          - Available lxc images
+          - Available lxc ubuntu images
+        include:
+          - label: Available lxc alias
+            script: ./alias.sh
+          - label: Available lxc images
+            script: ./images.sh
+          - label: Available lxc ubuntu images
+            script: ./ubuntu.sh
+    steps:
+      - uses: actions/checkout@master
+      - uses: canonical/setup-lxd@v0.1.1
+      - name: ${{ matrix.label }}
+        run: ${{ matrix.script }}
   launchv1:
     name: Launch CGroupV1
     runs-on: ubuntu-20.04
