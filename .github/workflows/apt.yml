@@ -27,3 +27,19 @@ jobs:
       - uses: canonical/setup-lxd@v0.1.1
       - name: ${{ matrix.label }}
         run: ${{ matrix.script }}
+  launch:
+    name: Launch
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        label:
+          - Ubuntu 24.04
+        include:
+          - label: Ubuntu 24.04
+            script: ./ubuntu2404.sh
+    steps:
+      - uses: actions/checkout@master
+      - uses: canonical/setup-lxd@v0.1.1
+      - name: ${{ matrix.label }}
+        run: ${{ matrix.script }}
