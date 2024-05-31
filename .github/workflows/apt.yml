@@ -1,0 +1,17 @@
+name: Check available lxc images
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  test:
+    name: Test Available lxc images from GitHub Actions
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@master
+      - uses: canonical/setup-lxd@v0.1.1
+      - name: Run script to check available lxc images
+        run: test.sh
