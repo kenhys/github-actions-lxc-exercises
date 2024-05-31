@@ -5,7 +5,7 @@ set -eux
 image=$1
 
 echo "::group::Run test: collect information"
-lxc launch $image info
+lxc image info $image
 echo "::endgroup::"
 
 echo "::group::Run test: launch $image"
