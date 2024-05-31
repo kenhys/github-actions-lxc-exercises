@@ -38,6 +38,7 @@ jobs:
           - CentOS 7
           - CentOS 7 (alias)
           - CentOS 7 (amd64)
+          - CentOS 7 (figerprint)
           - AmazonLinux 2
           - AmazonLinux 2023
         include:
