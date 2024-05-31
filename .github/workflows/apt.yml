@@ -42,11 +42,11 @@ jobs:
           - label: Ubuntu 24.04
             image: ubuntu:n
           - label: CentOS 7
-            image: centos/7
+            image: images:centos/7
           - label: AmazonLinux 2
-            image: amazonlinux/2
+            image: images:amazonlinux/2
           - label: AmazonLinux 2023
-            image: amazonlinux/2023
+            image: images:amazonlinux/2023
     steps:
       - uses: actions/checkout@master
       - uses: canonical/setup-lxd@v0.1.1
