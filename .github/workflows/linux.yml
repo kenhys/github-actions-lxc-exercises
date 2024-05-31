@@ -92,11 +92,14 @@ jobs:
         label:
           - RockyLinux 8
           - AlmaLinux 9
+          - Ubuntu 24.04
         include:
           - label: RockyLinux 8
             image: images:rockylinux/8
           - label: AlmaLinux 9
             image: images:almalinux/9
+          - label: Ubuntu 24.04
+            image: ubuntu:n
     steps:
       - uses: actions/checkout@master
       - uses: canonical/setup-lxd@v0.1.1
