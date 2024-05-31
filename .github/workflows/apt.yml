@@ -40,7 +40,7 @@ jobs:
           - AmazonLinux 2023
         include:
           - label: Ubuntu 24.04
-            image: ubunut:n
+            image: ubunutu:n
           - label: CentOS 7
             image: images:centos/7
           - label: AmazonLinux 2
