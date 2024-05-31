@@ -36,6 +36,8 @@ jobs:
         label:
           - Ubuntu 24.04
           - CentOS 7
+          - CentOS 7 (alias)
+          - CentOS 7 (amd64)
           - AmazonLinux 2
           - AmazonLinux 2023
         include:
@@ -43,6 +45,10 @@ jobs:
             image: ubuntu:n
           - label: CentOS 7
             image: images:centos/7
+          - label: CentOS 7 (alias)
+            image: centos/7
+          - label: CentOS 7 (amd64)
+            image: centos/7/amd64
           - label: AmazonLinux 2
             image: images:amazonlinux/2
           - label: AmazonLinux 2023
