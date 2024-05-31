@@ -10,18 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-    matrix:
-      label:
-        - Available lxc alias
-        - Available lxc images
-        - Available lxc ubuntu images
-    include:
-      - label: Available lxc alias
-        script: ./alias.sh
-      - label: Available lxc images
-        script: ./images.sh
-      - label: Available lxc ubuntu images
-        script: ./ubuntu.sh
+      matrix:
+        label:
+          - Available lxc alias
+          - Available lxc images
+          - Available lxc ubuntu images
+      include:
+        - label: Available lxc alias
+          script: ./alias.sh
+        - label: Available lxc images
+          script: ./images.sh
+        - label: Available lxc ubuntu images
+          script: ./ubuntu.sh
     steps:
       - uses: actions/checkout@master
       - uses: canonical/setup-lxd@v0.1.1
