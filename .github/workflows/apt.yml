@@ -27,9 +27,9 @@ jobs:
       - uses: canonical/setup-lxd@v0.1.1
       - name: ${{ matrix.label }}
         run: ${{ matrix.script }}
-  launch:
-    name: Launch
-    runs-on: ubuntu-latest
+  launchv1:
+    name: Launch CGroupV1)
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
@@ -47,6 +47,25 @@ jobs:
             image: images:amazonlinux/2
           - label: AmazonLinux 2023
             image: images:amazonlinux/2023
+    steps:
+      - uses: actions/checkout@master
+      - uses: canonical/setup-lxd@v0.1.1
+      - name: ${{ matrix.label }}
+        run: ./launch.sh ${{ matrix.image }}
+  launchv2:
+    name: Launch CGroupV2)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        label:
+          - RockyLinux 8
+          - AlmaLinux 9
+        include:
+          - label: RockyLinux 8
+            image: images:rockylinux/8
+          - label: AlmaLinux 9
+            image: images:almalinux/9
     steps:
       - uses: actions/checkout@master
       - uses: canonical/setup-lxd@v0.1.1
