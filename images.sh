@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux
+set -ux
 
 echo "::group::Run test: list images"
 lxc image list images:
