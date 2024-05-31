@@ -6,7 +6,7 @@ on:
   pull_request:
 jobs:
   test:
-    name: Test Available lxc images from GitHub Actions
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
