@@ -11,5 +11,5 @@ echo "::group::snap services lxd"
 snap services lxd
 echo "::endgroup::"
 echo "::group::snap logs lxd"
-snap logs lxd
+sudo snap logs lxd
 echo "::endgroup::"
