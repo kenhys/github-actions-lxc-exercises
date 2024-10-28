@@ -47,6 +47,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: canonical/setup-lxd@v0.1.1
+      - name: Run diagnostic
+        uname -a
+        lxc ls
+        snap info lxd
+        snap services lxd
+        snap logs lxd
       - name: ${{ matrix.label }}
         run: ${{ matrix.script }}
   launchv1:
