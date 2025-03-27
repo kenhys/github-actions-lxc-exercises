@@ -25,7 +25,7 @@ jobs:
             script: ./ubuntu.sh
     steps:
       - uses: actions/checkout@master
-      - uses: canonical/setup-lxd@v0.1.1
+      - uses: canonical/setup-lxd@v0.1.2
       - name: ${{ matrix.label }}
         run: ${{ matrix.script }}
   testv1:
@@ -47,7 +47,7 @@ jobs:
             script: ./ubuntu.sh
     steps:
       - uses: actions/checkout@master
-      - uses: canonical/setup-lxd@v0.1.1
+      - uses: canonical/setup-lxd@v0.1.2
       - name: Run diagnostic
         run: ./diagnostics.sh
       - name: ${{ matrix.label }}
@@ -86,7 +86,7 @@ jobs:
             image: images:amazonlinux/2023
     steps:
       - uses: actions/checkout@master
-      - uses: canonical/setup-lxd@v0.1.1
+      - uses: canonical/setup-lxd@v0.1.2
       - name: Run diagnostic
         run: ./diagnostics.sh
       - name: ${{ matrix.label }}
@@ -116,6 +116,6 @@ jobs:
             image: images:centos/7
     steps:
       - uses: actions/checkout@master
-      - uses: canonical/setup-lxd@v0.1.1
+      - uses: canonical/setup-lxd@v0.1.2
       - name: ${{ matrix.label }}
         run: ./launch.sh ${{ matrix.image }}
