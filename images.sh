@@ -19,7 +19,11 @@ lxc image info images:amazonlinux/2023
 echo "::endgroup::"
 
 echo "::group::Use images.linuxcontainers.org"
-lxc remote add linuxcontainers https://images.linuxcontainers.org
+lxc remote add -y linuxcontainers https://images.linuxcontainers.org
+echo "::endgroup::"
+
+echo "::group::Show remote list again"
+lxc remote list
 echo "::endgroup::"
 
 echo "::group::Run test: show info linuxcontainers:amazonlinux/2"
