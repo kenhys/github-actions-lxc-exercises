@@ -20,7 +20,7 @@ echo "::endgroup::"
 
 echo "::group::Use images.linuxcontainers.org"
 lxc remote add --help
-lxc remote add linuxcontainers https://images.linuxcontainers.org
+lxc remote add linuxcontainers https://images.linuxcontainers.org --accept-certificate
 echo "::endgroup::"
 
 echo "::group::Show remote list again"
